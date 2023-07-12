@@ -8,6 +8,7 @@ public class Satellite {
     private String nameSatelite;
     private Double distance;
 
+    //Setters y getters.
     public void setName(String name){
         this.nameSatelite = name;
     }

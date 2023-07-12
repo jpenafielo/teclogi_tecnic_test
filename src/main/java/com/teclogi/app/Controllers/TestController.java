@@ -28,6 +28,7 @@ public class TestController {
         return "Server is running.";
     }
 
+    //Llamada a la función getlocation cuando se realiza una petición http post a la ruta /tracking/
     @PostMapping("/tracking/")
     ResponseEntity<Truck> locationTruck(@RequestBody SatelliteRequest request ){
 
@@ -35,13 +36,15 @@ public class TestController {
         
         List<Satellite> satelites = request.getSatellites(); 
 
-
+        //Obtención de las distancias a partir de la lista de satelites obtenida en la petición
         Double sputnikDistance = satelites.get(0).getDistance();
         Double explorekDistance = satelites.get(1).getDistance();
         Double asterixDistance = satelites.get(2).getDistance();
 
+        //Llamada a la función.
         Truck positionTruck = trackingServices.getLocation(sputnikDistance, explorekDistance, asterixDistance);
 
+        //Si no es válido, es decir, la respuesta es nula, se responde un httpstatus 404.
         if (positionTruck.getPosition()==null){
 
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(positionTruck);
@@ -53,7 +56,7 @@ public class TestController {
         }
         
     }
-
+    //Llamada a la función rob cuando se ejecuta una petición post a la ruta /rob/
     @PostMapping("/rob/")
     MoneyStolen moneyStolenRob(@RequestBody MoneyHouses request ){
         

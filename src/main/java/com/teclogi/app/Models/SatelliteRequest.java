@@ -6,6 +6,7 @@ public class SatelliteRequest {
     
     private List<Satellite> satellites;
 
+    //Setters y getters.
     public List<Satellite> getSatellites() {
         return satellites;
     }

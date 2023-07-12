@@ -6,6 +6,7 @@ public class Position {
 
     private Double y;
 
+    //Setters y getters.
     public void setX(Double x){
         this.x = x;
     }

@@ -8,6 +8,8 @@ public class Truck {
 
     private Boolean isInDanger;
 
+    //Setters y getters.
+
     public void setPosition(Position position){
         this.position = position;
 

@@ -4,6 +4,7 @@ public class MoneyStolen {
     
     private Integer moneyStolen;
 
+    //Setters y getters.
     public void setMoneyStolen(Integer moneyStolen){
         this.moneyStolen = moneyStolen;
     }
